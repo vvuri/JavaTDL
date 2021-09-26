@@ -25,4 +25,27 @@ public class TestRest {
                 .body("name", equalTo("Luke Skywalker"));
     }
 
+    @Test
+    public void getPlanets() {
+        String local = "planets/";
+
+        given()
+                .when()
+                .get(URL+local)
+                .then()
+                .log().body()
+                .statusCode(200);
+
+    }
+
+    // https://swapi.dev/api/people/?search=r2
+
+    // films string -- The URL root for Film resources
+    // people string -- The URL root for People resources
+    // planets string -- The URL root for Planet resources
+    // species string -- The URL root for Species resources
+    // starships string -- The URL root for Starships resources
+    // vehicles string -- The URL root for Vehicles resources
+
+
 }
