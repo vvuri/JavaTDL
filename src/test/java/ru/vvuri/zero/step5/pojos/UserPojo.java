@@ -1,8 +1,8 @@
-package ru.vvuri.zero.step3.pojos;
+package ru.vvuri.zero.step5.pojos;
 
-import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true) // не все данные серриализовывать
