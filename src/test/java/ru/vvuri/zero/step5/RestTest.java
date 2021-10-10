@@ -3,7 +3,10 @@ package ru.vvuri.zero.step5;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+//import org.apache.log4j.BasicConfigurator;
+//import org.apache.log4j.PropertyConfigurator;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import ru.vvuri.zero.step5.pojos.UserRequest;
 import ru.vvuri.zero.step5.pojos.CreateUserResponse;
@@ -14,6 +17,13 @@ import java.util.List;
 
 public class RestTest {
     private static RestWrapper api;
+
+//    @BeforeSuite
+//    public void initLog4j() {
+//        BasicConfigurator.configure();
+//        String log4jConfPath = "./src/test/java/ru/vvuri/zero/step5/log4j.properties";
+//        PropertyConfigurator.configure(log4jConfPath);
+//    }
 
     @BeforeClass
     public static void auth() {
@@ -51,6 +61,7 @@ public class RestTest {
         System.out.println(res);
     }
 }
+
 /*
 Есть две концепции реализации степов в проекте
 1. Создать статические методы заросов, которые будут возвращать пользователей и другие данные
@@ -61,4 +72,4 @@ public class RestTest {
 Использование паттерна @Builder - упрощает механизм доступа к свойствам класса через цепочку
 @Builder - убирает дефолтный конструкто - поэтому необходимо еще добавить
 @NoArgsConstructor @AllArgsConstructor
- */
+*/

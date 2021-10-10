@@ -1,6 +1,5 @@
 package ru.vvuri.zero.step1;
 
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 

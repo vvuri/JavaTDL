@@ -15,3 +15,11 @@ run my task:
 ```
 $ gradle -q version
 ```
+### Allure run server
+```
+$ gradle clean build
+$ gradle allureServe
+```
+- html in JavaTDL/build/reports/tests/test/index.html
+- server run browser page automate
+- Doc https://docs.qameta.io/allure/#_gradle_3
