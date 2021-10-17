@@ -7,6 +7,8 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'io.qameta.allure' version "2.9.4"
+    id 'org.springframework.boot' version "2.5.5"
+//    id "io.spring.dependency-management" version "1.0.11.RELEASE"
 }
 
 repositories {
@@ -21,6 +23,11 @@ dependencies {
     implementation 'io.rest-assured:json-path:4.4.0'
     implementation 'org.codehaus.jackson:jackson-core-asl:1.9.13'
     implementation 'com.google.code.gson:gson:2.6.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter:2.5.5'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.5'
+
     implementation 'org.springframework:spring-core:5.3.11'
     implementation 'org.springframework:spring-context:5.3.11'
     implementation 'org.springframework.boot:spring-boot:2.5.5'

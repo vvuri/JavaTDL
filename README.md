@@ -23,3 +23,11 @@ $ gradle allureServe
 - html in JavaTDL/build/reports/tests/test/index.html
 - server run browser page automate
 - Doc https://docs.qameta.io/allure/#_gradle_3
+
+
+### Spring Boot
+- simple app on localhost:8080
+    - @SpringBootApplication under main class and gradle: 
+    - spring-boot-starter
+    - spring-boot-starter-web
+    - spring-boot-starter-actuator
