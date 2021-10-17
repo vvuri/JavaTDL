@@ -8,7 +8,7 @@ plugins {
     id 'maven-publish'
     id 'io.qameta.allure' version "2.9.4"
     id 'org.springframework.boot' version "2.5.5"
-//    id "io.spring.dependency-management" version "1.0.11.RELEASE"
+//    id "io.spring.dependency-management" version "1.0.11.RELEASE"  - for auto version
 }
 
 repositories {
@@ -44,6 +44,8 @@ dependencies {
 
     testCompileOnly 'org.projectlombok:lombok:1.18.20'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
 
 //    implementation group: 'io.qameta.allure.gradle.allure', name: 'allure-plugin', version: '2.9.4'
 //    implementation group: 'io.qameta.allure', name: 'allure-gradle', version: '2.5'
@@ -90,4 +92,8 @@ allure {
     aspectjweaver = true
 //    resultsDir = file("target/allure-results")
 //    reportDir = file("target/allure-reports")
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }

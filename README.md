@@ -26,8 +26,12 @@ $ gradle allureServe
 
 
 ### Spring Boot
-- simple app on localhost:8080
+- simple app on localhost:8080/actuator/health
     - @SpringBootApplication under main class and gradle: 
     - spring-boot-starter
     - spring-boot-starter-web
     - spring-boot-starter-actuator
+
+
+### IDEA
+  - Settings - Plugin - lombok
