@@ -31,7 +31,7 @@ $ gradle allureServe
     - spring-boot-starter
     - spring-boot-starter-web
     - spring-boot-starter-actuator
-
+- ignore src/test/resources/application-test.yml with pass to DB
 
 ### IDEA
   - Settings - Plugin - lombok

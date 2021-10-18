@@ -100,3 +100,4 @@ target/
 .allure/
 allure-results/
 .idea/
+src/test/resources/application-test.yml

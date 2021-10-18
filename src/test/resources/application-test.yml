@@ -1,4 +1,0 @@
-app:
-  services:
-    greeting:
-      message: "Hello World test"

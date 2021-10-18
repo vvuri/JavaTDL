@@ -6,5 +6,4 @@ import ru.vvuri.springboot.entity.CompanyEntity;
 
 @Repository
 public interface CompanyRepository extends JpaRepository<CompanyEntity, Integer> {
-
 }

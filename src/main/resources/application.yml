@@ -2,3 +2,15 @@ app:
   services:
     greeting:
       message: "Hello World"
+
+spring:
+  datasource:
+    username: postgres
+    password: postgre
+    url: jdbc:postgresql://localhost:5432/pipeline_db
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
