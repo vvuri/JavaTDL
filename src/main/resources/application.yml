@@ -9,8 +9,8 @@ spring:
     password: postgre
     url: jdbc:postgresql://localhost:5432/pipeline_db
     driver-class-name: org.postgresql.Driver
-
   jpa:
+    #database: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     properties:
       hibernate.format_sql: true

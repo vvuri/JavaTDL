@@ -1,21 +1,15 @@
 package ru.vvuri.springboot.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.Test;
+import ru.vvuri.springboot.IntegrationTestBase;
 import ru.vvuri.springboot.entity.CompanyEntity;
 
 import java.util.Optional;
 
 import static org.testng.Assert.*;
 
-@ActiveProfiles("test")
-@SpringBootTest
-@Transactional  // позволяет откатывать тесты после выполнения
-public class CompanyRepositoryTest extends AbstractTestNGSpringContextTests {
+public class CompanyRepositoryTest extends IntegrationTestBase {
 
     private static final Integer APPLE_ID = 1;
 
@@ -39,4 +33,8 @@ public class CompanyRepositoryTest extends AbstractTestNGSpringContextTests {
         companyRepository.save(company);
         assertNotNull(company.getId());
     }
+
+    // TODO:
+    // @Transactional - не работет
+    // есть ошибка  Spring Data JDBC now requires a Dialect for each database
 }
