@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Integer> {
+public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Integer>, EmployeeCustomRepository {
 
     Optional<EmployeeEntity> findByFirstNameContaining(String firstName);
 
@@ -37,5 +37,4 @@ public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Intege
             "from employee e " +
             "where e.salary > :salary", nativeQuery = true)
     List<EmployeeNativeView> findAllBySalaryGreaterThanNative(@Param("salary") Integer salary);
-
 }

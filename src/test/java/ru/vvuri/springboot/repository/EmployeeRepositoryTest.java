@@ -10,6 +10,8 @@ import ru.vvuri.springboot.projection.EmployeeNativeView;
 import java.util.List;
 import java.util.Optional;
 
+import static org.hamcrest.Matchers.hasSize;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class EmployeeRepositoryTest extends IntegrationTestBase {
@@ -50,5 +52,11 @@ public class EmployeeRepositoryTest extends IntegrationTestBase {
         // employee.get(0).getFullName()  -> IvanIvanov
         List<EmployeeNativeView> employee = employeeRepository.findAllBySalaryGreaterThanNative(500);
         assertTrue(employee.stream().count() == 2);
+    }
+
+    @Test
+    void testFindCustomQuery() {
+        List<EmployeeEntity> customQuery = employeeRepository.findCustomQuery();
+        assertTrue(customQuery.stream().count() == 0);
     }
 }
