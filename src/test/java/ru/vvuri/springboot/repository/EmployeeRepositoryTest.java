@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.Test;
 import ru.vvuri.springboot.IntegrationTestBase;
 import ru.vvuri.springboot.entity.EmployeeEntity;
+import ru.vvuri.springboot.projection.EmployeeNameView;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,5 +34,11 @@ public class EmployeeRepositoryTest extends IntegrationTestBase {
     void testFindByFirstNameAndSalary() {
         List<EmployeeEntity> employee = employeeRepository.findAllByFirstNameAndSalary("Petr", 2500);
         assertTrue(employee.stream().count() == 1);
+    }
+
+    @Test
+    void testFindBySalary() {
+        List<EmployeeNameView> employee = employeeRepository.findAllBySalaryGreaterThan(500);
+        assertTrue(employee.stream().count() == 2);
     }
 }
