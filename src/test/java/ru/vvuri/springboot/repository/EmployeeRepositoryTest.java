@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import ru.vvuri.springboot.IntegrationTestBase;
 import ru.vvuri.springboot.entity.EmployeeEntity;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.testng.Assert.assertTrue;
@@ -20,5 +21,17 @@ public class EmployeeRepositoryTest extends IntegrationTestBase {
     void testFindById() {
         Optional<EmployeeEntity> employee = employeeRepository.findById(IVAN_ID);
         assertTrue(employee.isPresent());
+    }
+
+    @Test
+    void testFindByFirstName() {
+        Optional<EmployeeEntity> employee = employeeRepository.findByFirstNameContaining("Petr");
+        assertTrue(employee.isPresent());
+    }
+
+    @Test
+    void testFindByFirstNameAndSalary() {
+        List<EmployeeEntity> employee = employeeRepository.findAllByFirstNameAndSalary("Petr", 2500);
+        assertTrue(employee.stream().count() == 1);
     }
 }
