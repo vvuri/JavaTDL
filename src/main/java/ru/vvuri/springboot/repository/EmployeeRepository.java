@@ -6,6 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import ru.vvuri.springboot.entity.EmployeeEntity;
 import ru.vvuri.springboot.projection.EmployeeNameView;
+import ru.vvuri.springboot.projection.EmployeeNativeView;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,4 +29,13 @@ public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Intege
 
     // созадине bp projection - проекция позволяет получать только часть полей, а не все
     List<EmployeeNameView> findAllBySalaryGreaterThan(Integer salary);
+
+    // через нативный запрос делаем, при этом имена as fukName это из getFullName()
+    @Query(value = "select " +
+            "e.id as id, " +
+            "e.first_name || e.last_name as fullName " +
+            "from employee e " +
+            "where e.salary > :salary", nativeQuery = true)
+    List<EmployeeNativeView> findAllBySalaryGreaterThanNative(@Param("salary") Integer salary);
+
 }

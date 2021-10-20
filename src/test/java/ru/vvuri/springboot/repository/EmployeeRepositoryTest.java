@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import ru.vvuri.springboot.IntegrationTestBase;
 import ru.vvuri.springboot.entity.EmployeeEntity;
 import ru.vvuri.springboot.projection.EmployeeNameView;
+import ru.vvuri.springboot.projection.EmployeeNativeView;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,6 +40,15 @@ public class EmployeeRepositoryTest extends IntegrationTestBase {
     @Test
     void testFindBySalary() {
         List<EmployeeNameView> employee = employeeRepository.findAllBySalaryGreaterThan(500);
+        assertTrue(employee.stream().count() == 2);
+    }
+
+    @Test
+    void testFindBySalaryNative() {
+        // Run in Debug mode
+        // Alt + F8
+        // employee.get(0).getFullName()  -> IvanIvanov
+        List<EmployeeNativeView> employee = employeeRepository.findAllBySalaryGreaterThanNative(500);
         assertTrue(employee.stream().count() == 2);
     }
 }
