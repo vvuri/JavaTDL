@@ -10,8 +10,6 @@ import ru.vvuri.springboot.projection.EmployeeNativeView;
 import java.util.List;
 import java.util.Optional;
 
-import static org.hamcrest.Matchers.hasSize;
-import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class EmployeeRepositoryTest extends IntegrationTestBase {
