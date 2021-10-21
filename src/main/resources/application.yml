@@ -11,9 +11,10 @@ spring:
     driver-class-name: org.postgresql.Driver
 
   # V(version)__description.sql -> flyway_schema_history table
+  # можно переопределить папку для миграций - по умолчанию в ресурсах
   flyway:
-    schemas: test_schema
-    # можно переопределить папку для миграций - по умолчанию в ресурсах
+    # schemas: test_schema   # если мы используем другу схему, по-умолчанию public
+    baseline-on-migrate: true
 
   jpa:
     #database: org.hibernate.dialect.PostgreSQLDialect
