@@ -36,3 +36,6 @@ $ gradle allureServe
 
 ### IDEA
   - Settings - Plugin - lombok
+
+### Tests
+- Testcontainers Core for DB in Docker 

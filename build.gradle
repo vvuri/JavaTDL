@@ -57,6 +57,9 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
 
+    // Docker DB for testing
+    testImplementation 'org.testcontainers:postgresql:1.16.1'
+
 //    implementation group: 'io.qameta.allure.gradle.allure', name: 'allure-plugin', version: '2.9.4'
 //    implementation group: 'io.qameta.allure', name: 'allure-gradle', version: '2.5'
 //    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.15.0'
