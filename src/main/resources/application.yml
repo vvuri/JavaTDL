@@ -9,8 +9,15 @@ spring:
     password: postgre
     url: jdbc:postgresql://localhost:5432/pipeline_db
     driver-class-name: org.postgresql.Driver
+
+  # V(version)__description.sql -> flyway_schema_history table
+  flyway:
+    schemas: test_schema
+    # можно переопределить папку для миграций - по умолчанию в ресурсах
+
   jpa:
     #database: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     properties:
       hibernate.format_sql: true
+

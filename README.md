@@ -32,6 +32,7 @@ $ gradle allureServe
     - spring-boot-starter-web
     - spring-boot-starter-actuator
 - ignore src/test/resources/application-test.yml with pass to DB
+- Flywaydb-core for DB Migration 
 
 ### IDEA
   - Settings - Plugin - lombok
